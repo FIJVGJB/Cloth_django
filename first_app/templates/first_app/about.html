@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleHaus Clothing | About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060610;color:#f5f5ff}
+        a{text-decoration:none;color:inherit}
+        header{background:#060610;border-bottom:1px solid rgba(255,255,255,0.08)}
+        .nav{max-width:960px;margin:0 auto;padding:1rem 1.4rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}
+        .logo span{color:#ff6b6b}
+        .nav-links{display:flex;gap:1.2rem;font-size:.85rem;color:#a2a6b7}
+        .nav-links a:hover{color:#ffb347}
+        main{max-width:960px;margin:0 auto;padding:2.2rem 1.4rem 3rem}
+        h1{font-size:2rem;margin-bottom:.3rem}
+        .sub{color:#a2a6b7;font-size:.9rem;max-width:32rem;margin-bottom:2rem}
+        .grid{display:grid;grid-template-columns:minmax(0,1.2fr)minmax(0,1fr);gap:2rem;align-items:flex-start}
+        .pill{display:inline-flex;padding:.2rem .6rem;border-radius:999px;background:rgba(255,255,255,0.06);font-size:.7rem;color:#c7cadb;margin-bottom:.7rem}
+        p{font-size:.94rem;color:#d0d4e5;line-height:1.6;margin-bottom:1rem}
+        h2{font-size:1.2rem;margin:1.8rem 0 .8rem}
+        ul{list-style:none;font-size:.92rem;color:#cfd3e6;margin-bottom:1.5rem}
+        ul li{margin-bottom:.4rem}
+        .values{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:.4rem}
+        .value-card{background:radial-gradient(circle at top,#222235,#0a0a12);border-radius:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.08)}
+        .value-card h3{font-size:1rem;margin-bottom:.3rem}
+        .value-card p{font-size:.88rem;margin-bottom:0;color:#cbd0ea}
+        .team-card{background:linear-gradient(135deg,#181828,#13131f);border-radius:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.08);box-shadow:0 16px 44px rgba(0,0,0,0.7)}
+        .team-card img{width:100%;border-radius:.8rem;margin-bottom:.7rem}
+        .team-card strong{display:block;font-size:.95rem;margin-bottom:.1rem}
+        .team-card span{font-size:.8rem;color:#a2a6b7}
+        .metrics{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.3rem;font-size:.86rem;color:#a2a6b7}
+        .metrics div strong{display:block;font-size:1.1rem;color:#ffb347}
+        .timeline{margin-top:2.6rem;border-top:1px solid rgba(255,255,255,0.08);padding-top:1.3rem}
+        .timeline h2{margin-top:0}
+        .timeline-list{list-style:none;margin-top:.5rem;font-size:.9rem;color:#cfd3e6}
+        .timeline-list li{margin-bottom:.6rem}
+        .timeline-year{font-weight:600;color:#ffb347;margin-right:.4rem}
+        .impact{margin-top:2.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+        .impact-card{background:radial-gradient(circle at top,#232338,#0a0a14);border-radius:1rem;padding:1rem;border:1px solid rgba(255,255,255,0.08);font-size:.86rem;color:#cfd3e6}
+        .impact-card strong{display:block;font-size:1.1rem;color:#ffb347;margin-bottom:.25rem}
+        footer{border-top:1px solid rgba(255,255,255,0.08);margin-top:2.8rem;padding-top:1rem;font-size:.78rem;color:#787d92;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem}
+        @media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:1.6rem}}
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav">
+        <div class="logo">Style<span>Haus</span></div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/collections/">Collections</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="grid">
+        <div>
+            <span class="pill">About us</span>
+            <h1>The studio behind the clothes.</h1>
+            <p class="sub">StyleHaus is an independent clothing label built by a small team of designers, photographers and product people who care about how everyday clothes feel, not just how they look.</p>
+            <p>We started in a one–room studio in 2020, frustrated with fast fashion and graphic-heavy basics that fell apart after a few washes. We wanted wardrobe staples that could survive coffee spills, airport security trays and late–night edits without losing their shape.</p>
+            <p>Every piece we make is tested in the real world – worn to shoots, packed into carry–ons and thrown into shared laundry machines – before it ever hits the online store.</p>
+            <h2>What we care about</h2>
+            <div class="values">
+                <article class="value-card">
+                    <h3>Radical comfort</h3>
+                    <p>Soft interiors, thoughtful seams and silhouettes that move with you – not against you.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Responsible supply</h3>
+                    <p>We work with audited factories, recycled packaging and fabrics sourced from certified mills.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Quiet design</h3>
+                    <p>Subtle branding, neutral color stories and details you only notice when you wear them.</p>
+                </article>
+            </div>
+        </div>
+        <aside class="team-card">
+            <img src="https://images.pexels.com/photos/6311665/pexels-photo-6311665.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Small creative team in a studio">
+            <strong>Small team, big wardrobes.</strong>
+            <span>Shot in our Berlin studio</span>
+            <div class="metrics">
+                <div>
+                    <strong>25k+</strong>
+                    garments in circulation
+                </div>
+                <div>
+                    <strong>18</strong>
+                    people in the core team
+                </div>
+                <div>
+                    <strong>12</strong>
+                    ethical partner factories
+                </div>
+            </div>
+        </aside>
+    </section>
+    <section class="timeline" aria-label="Brand timeline">
+        <h2>From side project to studio</h2>
+        <ul class="timeline-list">
+            <li><span class="timeline-year">2020</span>Launched our first small hoodie run from a shared studio space.</li>
+            <li><span class="timeline-year">2021</span>Expanded into denim and co-ord sets after listening to customer feedback.</li>
+            <li><span class="timeline-year">2023</span>Switched to fully recycled packaging and introduced carbon–neutral shipping options.</li>
+            <li><span class="timeline-year">2025</span>Opened our Berlin showroom and partnered with 12 ethical factories across Europe and Asia.</li>
+        </ul>
+    </section>
+    <section class="impact" aria-label="Impact and commitments">
+        <article class="impact-card">
+            <strong>90% low–impact fabrics</strong>
+            <span>Most of our core collections are made with organic cotton, recycled polyester or modal blends.</span>
+        </article>
+        <article class="impact-card">
+            <strong>1% for community</strong>
+            <span>We donate 1% of every order to local creative initiatives and youth programs in our home cities.</span>
+        </article>
+        <article class="impact-card">
+            <strong>Repair over replace</strong>
+            <span>We offer simple repair guides and support so your favorite pieces stay in your rotation for years.</span>
+        </article>
+    </section>
+    <footer>
+        <p>© 2026 StyleHaus Studio.</p>
+        <p><a href="/contact/">Press & wholesale</a></p>
+    </footer>
+</main>
+</body>
+</html>

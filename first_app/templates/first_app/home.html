@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleHaus Clothing | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#0b0b10; color:#f8f8ff; }
+        a { text-decoration: none; color: inherit; }
+        header { position: sticky; top:0; z-index:10; background:rgba(5,5,10,0.95); border-bottom:1px solid rgba(255,255,255,0.06); backdrop-filter: blur(12px); }
+        .nav { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:1rem 1.5rem; }
+        .logo { font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-size:1rem; }
+        .logo span { color:#ff6b6b; }
+        .nav-links { display:flex; gap:1.5rem; font-size:.9rem; }
+        .nav-links a { opacity:.75; transition:.2s; }
+        .nav-links a:hover { opacity:1; color:#ffb347; }
+        .btn-nav { padding:.45rem .9rem; border-radius:999px; border:1px solid rgba(255,255,255,0.16); font-size:.85rem; background:linear-gradient(135deg,#ff6b6b,#ffb347); color:#111; font-weight:600; box-shadow:0 6px 18px rgba(0,0,0,0.35); }
+        main { max-width:1100px; margin:0 auto; padding:2.5rem 1.5rem 3.5rem; }
+        .hero { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:2.5rem; align-items:center; padding-top:1.5rem; }
+        .eyebrow { text-transform:uppercase; letter-spacing:.25em; font-size:.7rem; color:#ffb347; margin-bottom:.8rem; }
+        h1 { font-size:2.4rem; line-height:1.1; margin-bottom:1rem; }
+        h1 span { color:#ff6b6b; }
+        .hero-text { color:#b9bed1; font-size:.95rem; max-width:32rem; margin-bottom:1.5rem; }
+        .hero-cta { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+        .btn-primary { padding:.7rem 1.4rem; border-radius:999px; border:none; background:linear-gradient(135deg,#ff6b6b,#ffb347); color:#111; font-weight:600; cursor:pointer; box-shadow:0 8px 22px rgba(0,0,0,0.45); }
+        .btn-outline { padding:.7rem 1.2rem; border-radius:999px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:#f8f8ff; cursor:pointer; display:flex; align-items:center; gap:.35rem; font-size:.9rem; }
+        .hero-meta { display:flex; gap:1.5rem; margin-top:1.5rem; color:#8b90a4; font-size:.8rem; }
+        .hero-meta strong { display:block; color:#f8f8ff; font-size:1rem; }
+        .hero-image-card { position:relative; border-radius:1.5rem; overflow:hidden; background:radial-gradient(circle at top,#ffb34722,#111); border:1px solid rgba(255,255,255,0.08); box-shadow:0 22px 60px rgba(0,0,0,0.7); }
+        .hero-image-card img { width:100%; height:100%; object-fit:cover; filter:saturate(1.1); }
+        .badge { position:absolute; inset:auto 1rem 1rem auto; background:rgba(11,11,16,0.94); border-radius:1rem; padding:.75rem 1rem; font-size:.75rem; border:1px solid rgba(255,255,255,0.12); backdrop-filter:blur(10px); }
+        .badge strong { display:block; font-size:.9rem; color:#ffb347; }
+        .section { margin-top:3rem; }
+        .section-header { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; margin-bottom:1.4rem; }
+        .section-title { font-size:1.3rem; }
+        .section-sub { font-size:.9rem; color:#8b90a4; max-width:26rem; }
+        .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.4rem; }
+        .card { background:linear-gradient(145deg,#161623,#12121b); border-radius:1rem; padding:1rem 1rem 1.1rem; border:1px solid rgba(255,255,255,0.08); box-shadow:0 16px 40px rgba(0,0,0,0.55); }
+        .card img { width:100%; border-radius:.8rem; margin-bottom:.7rem; }
+        .pill { display:inline-flex; align-items:center; gap:.25rem; padding:.18rem .55rem; border-radius:999px; background:rgba(255,255,255,0.06); font-size:.68rem; color:#c4c8d8; margin-bottom:.5rem; }
+        .card h3 { font-size:1rem; margin-bottom:.3rem; }
+        .price { font-size:.95rem; color:#ffb347; font-weight:600; margin-bottom:.25rem; }
+        .price span { color:#8b90a4; font-size:.78rem; text-decoration:line-through; margin-left:.3rem; }
+        .rating { font-size:.78rem; color:#ffc857; margin-bottom:.4rem; }
+        .card-footer { display:flex; justify-content:space-between; align-items:center; margin-top:.4rem; font-size:.78rem; color:#8b90a4; }
+        .btn-small { padding:.3rem .75rem; border-radius:999px; border:none; font-size:.75rem; cursor:pointer; background:#ff6b6b; color:#111; font-weight:600; }
+        .testimonials { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:1.4rem; margin-top:1rem; }
+        .testimonial-card { background:linear-gradient(135deg,#181829,#151521); border-radius:1rem; padding:1rem; border:1px solid rgba(255,255,255,0.08); position:relative; overflow:hidden; }
+        .testimonial-card::before { content:"\201C"; position:absolute; top:-1.2rem; left:-.2rem; font-size:5rem; color:rgba(255,255,255,0.03); }
+        .testimonial-text { font-size:.9rem; color:#d1d5e6; margin-bottom:.7rem; }
+        .testimonial-meta { font-size:.8rem; color:#a0a4b8; }
+        .testimonial-meta strong { display:block; color:#f8f8ff; }
+        .testimonial-logos { display:flex; flex-wrap:wrap; gap:.7rem; font-size:.78rem; color:#8b90a4; align-items:center; }
+        footer { border-top:1px solid rgba(255,255,255,0.06); margin-top:3rem; padding-top:1.3rem; font-size:.78rem; color:#777c8f; display:flex; flex-wrap:wrap; gap:.6rem; justify-content:space-between; }
+        footer a { opacity:.8; }
+        footer a:hover { opacity:1; color:#ffb347; }
+        .strip { margin-top:2.6rem; padding:1rem 1.4rem; border-radius:1.2rem; background:linear-gradient(120deg,#181828,#14141f); border:1px solid rgba(255,255,255,0.08); display:flex; flex-wrap:wrap; gap:1.2rem; align-items:center; justify-content:space-between; font-size:.86rem; color:#c5cadc; }
+        .strip strong { font-size:1rem; color:#ffb347; display:block; margin-bottom:.1rem; }
+        .strip-list { display:flex; flex-wrap:wrap; gap:1rem; font-size:.8rem; }
+        .strip-pill { padding:.25rem .7rem; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); }
+        .faq { margin-top:3rem; display:grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap:2rem; align-items:flex-start; }
+        .faq h3 { font-size:1.1rem; margin-bottom:.6rem; }
+        .faq-item { margin-bottom:1rem; }
+        .faq-item h4 { font-size:.9rem; margin-bottom:.25rem; }
+        .faq-item p { font-size:.86rem; color:#b9bed1; }
+        .faq-note { font-size:.8rem; color:#8b90a4; }
+        @media (max-width: 800px) {
+            .hero, .testimonials { grid-template-columns:1fr; }
+            .hero { padding-top:.5rem; }
+            h1 { font-size:1.9rem; }
+            header { position:static; }
+            .faq { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav">
+        <div class="logo">Style<span>Haus</span></div>
+        <nav class="nav-links">
+            <a href="/">Home</a>
+            <a href="/collections/">Collections</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+        <a href="#hero" class="btn-nav">Shop now</a>
+    </div>
+</header>
+<main>
+    <section class="hero" id="hero">
+        <div>
+            <div class="eyebrow">Premium clothing studio</div>
+            <h1>Everyday <span>street style</span> that actually fits.</h1>
+            <p class="hero-text">
+                StyleHaus is a modern clothing brand crafting essential fits for real bodies –
+                breathable fabrics, relaxed silhouettes and details that make you feel put together
+                from coffee runs to late-night plans.
+            </p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="window.location.href='/collections/#new-drop'">Explore new drop</button>
+                <button class="btn-outline" onclick="scrollToSection('testimonials')">
+                    ★ 4.9 from 1.2k+ customers
+                </button>
+            </div>
+            <div class="hero-meta">
+                <div>
+                    <strong>48h delivery</strong>
+                    within major cities
+                </div>
+                <div>
+                    <strong>Free returns</strong>
+                    on all orders
+                </div>
+                <div>
+                    <strong>Ethical fabrics</strong>
+                    certified suppliers
+                </div>
+            </div>
+        </div>
+        <aside class="hero-image-card">
+            <img src="https://images.pexels.com/photos/7671166/pexels-photo-7671166.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Model wearing modern streetwear set">
+            <div class="badge">
+                <strong>FW26 Capsule</strong>
+                Oversized hoodies • Wide-leg cargos • Everyday tees
+            </div>
+        </aside>
+    </section>
+
+    <section class="section" id="collections">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Featured collections</h2>
+            </div>
+            <p class="section-sub">
+                Built around pieces you actually reach for. Mix, layer and repeat without
+                thinking twice about comfort or fit.
+            </p>
+        </div>
+        <div class="grid-3">
+            <article class="card">
+                <div class="pill">Women · Street essentials</div>
+                <img src="https://images.pexels.com/photos/6311579/pexels-photo-6311579.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Woman in oversized hoodie and cargo pants">
+                <h3>Soft Oversized Hoodie</h3>
+                <div class="price">$69 <span>$89</span></div>
+                <div class="rating">★ 4.9 · 523 reviews</div>
+                <div class="card-footer">
+                    <div>Cloud fleece · 5 colors</div>
+                    <button class="btn-small" onclick="window.location.href='/collections/'">View details</button>
+                </div>
+            </article>
+            <article class="card">
+                <div class="pill">Men · Everyday denim</div>
+                <img src="https://images.pexels.com/photos/7671210/pexels-photo-7671210.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Man in relaxed denim and white tee">
+                <h3>Relaxed Taper Jeans</h3>
+                <div class="price">$79 <span>$99</span></div>
+                <div class="rating">★ 4.8 · 341 reviews</div>
+                <div class="card-footer">
+                    <div>All–day stretch</div>
+                    <button class="btn-small" onclick="window.location.href='/collections/'">View details</button>
+                </div>
+            </article>
+            <article class="card">
+                <div class="pill">Unisex · Work & play</div>
+                <img src="https://images.pexels.com/photos/6311669/pexels-photo-6311669.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Two friends in matching neutral outfits">
+                <h3>Everyday Co-ord Set</h3>
+                <div class="price">$99 <span>$129</span></div>
+                <div class="rating">★ 5.0 · best seller</div>
+                <div class="card-footer">
+                    <div>Wrinkle–resistant</div>
+                    <button class="btn-small" onclick="window.location.href='/collections/'">View details</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" id="testimonials">
+        <div class="section-header">
+            <h2 class="section-title">Loved by everyday creatives</h2>
+            <p class="section-sub">
+                From designers and photographers to founders and students, StyleHaus is the
+                unofficial uniform for people building cool things.
+            </p>
+        </div>
+        <div class="testimonials">
+            <article class="testimonial-card">
+                <p class="testimonial-text" id="testimonial-text">
+                    “These are the first hoodies that actually feel premium without screaming a
+                    logo. I’ve worn the black one at least three times a week for a year and it
+                    still looks new.”
+                </p>
+                <div class="testimonial-meta">
+                    <strong id="testimonial-name">Nia Carter</strong>
+                    Brand designer, Berlin
+                </div>
+            </article>
+            <div>
+                <div class="testimonial-logos">
+                    Trusted by teams at
+                    <span>Studio Eleven</span>
+                    <span>Courtyard Labs</span>
+                    <span>Nightshift Coffee</span>
+                    <span>Pixel North</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="strip" aria-label="Shopping highlights">
+        <div>
+            <strong>Built for everyday, not just the feed.</strong>
+            From 6AM airport runs to midnight edits, every piece is designed to keep up.
+        </div>
+        <div class="strip-list">
+            <span class="strip-pill">Pre-washed to reduce shrinkage</span>
+            <span class="strip-pill">Unisex fits available</span>
+            <span class="strip-pill">Carbon–neutral shipping options</span>
+        </div>
+    </section>
+
+    <section class="faq" aria-label="Common questions">
+        <div>
+            <h3>Frequently asked before you order</h3>
+            <p class="faq-note">Quick answers to the things we’re asked the most about fabrics, sizing and shipping.</p>
+        </div>
+        <div>
+            <div class="faq-item">
+                <h4>How does your sizing run?</h4>
+                <p>Most pieces are slightly relaxed. If you are between sizes, we suggest going with the smaller size for a neater fit or up for an oversized look.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Where do you ship?</h4>
+                <p>We currently ship across Europe, the UK and North America, with 48h delivery available in major cities.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I return if it doesn’t fit?</h4>
+                <p>Yes – unworn items with tags can be returned or exchanged within 30 days, no questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 StyleHaus Studio. All rights reserved.</p>
+        <p>
+            <a href="/about/">About</a> ·
+            <a href="/collections/">Lookbook</a> ·
+            <a href="/contact/">Wholesale</a>
+        </p>
+    </footer>
+</main>
+<script>
+    const testimonials = [
+        {
+            text: "These are the first hoodies that actually feel premium without screaming a logo. I’ve worn the black one at least three times a week for a year and it still looks new.",
+            name: "Nia Carter – Brand designer"
+        },
+        {
+            text: "The co-ord sets are my go-to travel uniform. Soft, breathable and somehow still look sharp after a long-haul flight.",
+            name: "Luis Ortega – Content director"
+        },
+        {
+            text: "As a photographer I’m constantly moving and crouching. The denim has stretch in the right places and doesn’t dig in.",
+            name: "Hana Kim – Photographer"
+        }
+    ];
+    let index = 0;
+    setInterval(() => {
+        index = (index + 1) % testimonials.length;
+        document.getElementById('testimonial-text').textContent = testimonials[index].text;
+        document.getElementById('testimonial-name').textContent = testimonials[index].name;
+    }, 6000);
+    function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+</script>
+</body>
+</html>
